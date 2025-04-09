@@ -1,0 +1,128 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+:root {
+  --font-primary: 'Poppins', sans-serif;
+}
+
+html {
+  font-size: 62.5%;
+  overflow-x: hidden;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-primary);
+  background-color: black;
+  color: white;
+}
+
+/* Container chính */
+.container-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 2rem;
+  text-align: center;
+  z-index: 2;
+  position: relative;
+}
+
+/* Nội dung chính */
+.content {
+  width: 100%;
+  max-width: 800px;
+}
+
+/* Chúc mừng sinh nhật */
+.happy__content h1 {
+  font-size: clamp(2.5rem, 5vw, 6rem);
+  color: #ffeb3b;
+  text-shadow: 3px 3px 10px #ff4081;
+  margin-bottom: 2rem;
+  animation: fadeIn 1.5s ease-in-out;
+}
+
+.happy__content h2 {
+  font-size: clamp(1.8rem, 4vw, 4rem);
+  color: #fff;
+  text-shadow: 2px 2px 8px #e91e63;
+  margin: 1rem 0;
+  animation: fadeIn 2s ease-in-out;
+}
+
+/* Countdown */
+.countdown__content .headline h1 {
+  font-size: clamp(2rem, 5vw, 3rem);
+  margin-bottom: 1rem;
+}
+
+.countdown__content .subline h2 {
+  font-size: clamp(1.5rem, 4vw, 2.5rem);
+  margin-bottom: 2rem;
+}
+
+ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+  padding: 0;
+  margin: 0;
+}
+
+ul li {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 1rem 2rem;
+  border-radius: 1rem;
+  font-size: clamp(1.5rem, 4vw, 2.5rem);
+  font-weight: bold;
+  text-align: center;
+  min-width: 80px;
+}
+
+li span {
+  display: block;
+  font-size: clamp(2rem, 5vw, 3rem);
+}
+
+/* Pháo hoa canvas */
+.container-canvas {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive nhỏ hơn 600px */
+@media (max-width: 600px) {
+  .container-content {
+    padding: 1rem;
+  }
+
+  ul li {
+    padding: 1rem;
+    min-width: 60px;
+  }
+}
